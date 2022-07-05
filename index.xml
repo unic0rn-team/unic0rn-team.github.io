@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>unic0rn-team&#39;s billets</title>
+    
+    
+    
+    <link>https://unic0rn-team.github.io/</link>
+    <description>Recent content on unic0rn-team&#39;s billets</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 25 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://unic0rn-team.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CVE-2022-30190 &#34;Follina&#34; - part 1</title>
+      <link>https://unic0rn-team.github.io/post/cve-30190-1/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://unic0rn-team.github.io/post/cve-30190-1/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          # Billet 1 TL-DR; Le 27 mai 2022 @nao-sec découvre pendant le reverse hunting sur VirusTotal un fichier Word mis en ligne depuis la Biélorussie, intitulé &amp;ldquo;05-2022-0438.doc&amp;quot;( 06727ffda60359236a8029e0b3e8a0fd11c23313 ).
+Après avoir procédé a l&amp;rsquo;analyse de celui-ci Kevin Beaumont découvre un vecteur d&amp;rsquo;attaque inconnu qui abuse du composant msdt (Microsoft Support Diagnostic Tool) afin d&amp;rsquo;obtenir l&amp;rsquo;exécution du code arbitraire. Il qualifiera la vunérabilité comme étant un 0-Day et il lui donnera le nom de &amp;ldquo;Follina&amp;rdquo; d&amp;rsquo;après le nom d&amp;rsquo;un commune italienne de Trévise.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>CVE-2022-30190 &#34;Follina&#34; - part 2</title>
+      <link>https://unic0rn-team.github.io/post/cve-30190-2/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://unic0rn-team.github.io/post/cve-30190-2/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          # Billet 2 TL-DR; Suite à la publication de l&amp;rsquo;existence de la 0-Day, des POC (démonstrateurs) validant son exploitabilité ont commencés à être publiés rapidement. Comme pour toutes les vulnérabilités critiques, il convient de tester ceux-ci afin de valider leur exploitabilité et leur pertinence par rapport à l&amp;rsquo;environnement opérationnel.
+2.POCs à surprises Le système cible pour nos tests est un Windows 10 Professionnel x64 version 21H1 avec MS Office 2016. Pour notre banc d&amp;rsquo;essai on a décidé de choisir le démonstrateur publié par John Hammond (HuntressLab) qui a l&amp;rsquo;avantage de pouvoir tester plusieurs scénarios d&amp;rsquo;exploitation.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://unic0rn-team.github.io/about/</link>
+      <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://unic0rn-team.github.io/about/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Hi there My name is Radek and I&amp;rsquo;m the author of this theme. I made it to help you present your ideas easier.
+We all know how hard is to start something on the web, especially these days. You need to prepare a bunch of stuff, configure them and when that’s done — create the content.
+This theme is pretty basic and covers all of the essentials. All you have to do is start typing!
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Showcase</title>
+      <link>https://unic0rn-team.github.io/showcase/</link>
+      <pubDate>Fri, 18 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://unic0rn-team.github.io/showcase/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Header 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec interdum metus. Aenean rutrum ligula sodales ex auctor, sed tempus dui mollis. Curabitur ipsum dui, aliquet nec commodo at, tristique eget ante. Donec quis dolor nec nunc mollis interdum vel in purus. Sed vitae leo scelerisque, sollicitudin elit sed, congue ante. In augue nisl, vestibulum commodo est a, tristique porttitor est. Proin laoreet iaculis ornare. Nullam ut neque quam.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Archive</title>
+      <link>https://unic0rn-team.github.io/archive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://unic0rn-team.github.io/archive/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>
