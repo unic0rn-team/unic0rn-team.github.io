@@ -15,6 +15,27 @@
     
     
     <item>
+      <title>CVE-2022-30190 &#34;Follina&#34; - part 3</title>
+      <link>https://unic0rn-team.github.io/post/cve-30190-3/</link>
+      <pubDate>Fri, 08 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://unic0rn-team.github.io/post/cve-30190-3/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          # Billet 3 TL-DR; Dès lors que des démonstrateurs (POCs) sont publiés, il n&amp;rsquo;est qu&amp;rsquo;une question de temps avant que les acteurs malveillants (&amp;quot;threat actors&amp;rdquo; - TA) ne s&amp;rsquo;emparent de l&amp;rsquo;exploit pour l&amp;rsquo;incorporer dans leur arsenal, tout d&amp;rsquo;abord pour profiter du fameux &amp;ldquo;dwell time&amp;rdquo; (le temps écoulé entre la publication d&amp;rsquo;une vulnérabilité et l&amp;rsquo;application de son correctif).
+Ainsi, des nombreux TA ont armé la vulnérabilité dans leur kit d&amp;rsquo;exploitation en modifiant leurs mode opératoire (TTPs) en conséquence, avec un succès assez variable.
+          
+        
+        </description>
+    </item>
+    
+    <item>
       <title>CVE-2022-30190 &#34;Follina&#34; - part 1</title>
       <link>https://unic0rn-team.github.io/post/cve-30190-1/</link>
       <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
@@ -29,7 +50,7 @@
         
         
           # Billet 1 TL-DR; Le 27 mai 2022 @nao-sec découvre pendant le reverse hunting sur VirusTotal un fichier Word mis en ligne depuis la Biélorussie, intitulé &amp;ldquo;05-2022-0438.doc&amp;quot;( 06727ffda60359236a8029e0b3e8a0fd11c23313 ).
-Après avoir procédé a l&amp;rsquo;analyse de celui-ci Kevin Beaumont découvre un vecteur d&amp;rsquo;attaque inconnu qui abuse du composant msdt (Microsoft Support Diagnostic Tool) afin d&amp;rsquo;obtenir l&amp;rsquo;exécution du code arbitraire. Il qualifiera la vunérabilité comme étant un 0-Day et il lui donnera le nom de &amp;ldquo;Follina&amp;rdquo; d&amp;rsquo;après le nom d&amp;rsquo;un commune italienne de Trévise.
+Après avoir procédé a l&amp;rsquo;analyse de celui-ci Kevin Beaumont,un autre spécialiste dans la cyber sécurité, découvre un vecteur d&amp;rsquo;attaque inconnu qui abuse du composant msdt (Microsoft Support Diagnostic Tool) afin d&amp;rsquo;obtenir l&amp;rsquo;exécution du code arbitraire. Il qualifiera la vunérabilité comme étant un 0-Day et il lui donnera le nom de &amp;ldquo;Follina&amp;rdquo; d&amp;rsquo;après le nom d&amp;rsquo;un commune italienne de Trévise.
           
         
         </description>
@@ -49,8 +70,8 @@ Après avoir procédé a l&amp;rsquo;analyse de celui-ci Kevin Beaumont découvr
         
         
         
-          # Billet 2 TL-DR; Suite à la publication de l&amp;rsquo;existence de la 0-Day, des POC (démonstrateurs) validant son exploitabilité ont commencés à être publiés rapidement. Comme pour toutes les vulnérabilités critiques, il convient de tester ceux-ci afin de valider leur exploitabilité et leur pertinence par rapport à l&amp;rsquo;environnement opérationnel.
-2.POCs à surprises Le système cible pour nos tests est un Windows 10 Professionnel x64 version 21H1 avec MS Office 2016. Pour notre banc d&amp;rsquo;essai on a décidé de choisir le démonstrateur publié par John Hammond (HuntressLab) qui a l&amp;rsquo;avantage de pouvoir tester plusieurs scénarios d&amp;rsquo;exploitation.
+          # Billet 2 TL-DR; Suite à la publication de l&amp;quot;existence de la 0-Day, des POC (démonstrateurs) validant son exploitabilité ont commencés à apparaître rapidement. Comme pour toutes les vulnérabilités critiques, il convient de tester ceux-ci afin de valider leur exploitabilité et leur pertinence par rapport à l&amp;rsquo;environnement opérationnel.
+2.POCs à surprises L&amp;rsquo;e système cible pour nos tests est un Windows 10 Professionnel x64 version 21H1 avec MS Office 2016. Pour notre banc d&amp;rsquo;essai on a décidé de choisir le démonstrateur publié par John Hammond (HuntressLab) qui a l&amp;rsquo;avantage de pouvoir tester plusieurs scénarios d&amp;rsquo;exploitation.
           
         
         </description>
