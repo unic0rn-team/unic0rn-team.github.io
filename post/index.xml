@@ -9,10 +9,30 @@
     <description>Recent content in Posts on unic0rn-team&#39;s billets</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 23 Jul 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://unic0rn-team.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CVE-2022-30190 &#34;Follina&#34; - part 5</title>
+      <link>https://unic0rn-team.github.io/post/cve-30190-5/</link>
+      <pubDate>Sat, 23 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://unic0rn-team.github.io/post/cve-30190-5/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          #Billet 5 TL;DR L&amp;rsquo;existence d&amp;rsquo;une vulnérabilité ne signifie pas nécessairement qu&amp;rsquo;un adversaire a les connaissances ou les compétences pour l&amp;rsquo;exploiter. Cependant lorsque des données additionnelles émergent sous la forme des exploits publiés qui facilitent significativement son utilisation, l&amp;rsquo;analyse du contexte et du mode opératoire (&amp;ldquo;TTPs&amp;rdquo;) des TA met en perspective la criticité de celle-ci, . C&amp;rsquo;est également le cas de la &amp;ldquo;Follina&amp;rdquo; qui, depuis son publication, ne cesse pas de forcer à un rehaussement du niveau de risque à cause de son adoption par des différents attaquants avec des motivations et des modes opératoires divergentes.
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>CVE-2022-30190 &#34;Follina&#34; - part 4</title>
