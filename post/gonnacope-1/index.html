@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Les métamorphoses d&#39;un ransomware en batch : GonnaCope - part1 ::
+        unic0rn-team&#39;s billets — unic0rn-team&#39;s musings
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="# Billet 6 TL;DR Le 27 avril 2022 l&amp;rsquo;environnement d&amp;rsquo;analyse Any.Run (&amp;quot;online sandbox&amp;quot;) reçoit un échantillon intéressant portant le nom de G0nnaC0pe.bat téléchargé par l&amp;rsquo;utilisateur @petrovic082. Fait remarquable, celui-ci est un script batch très riche en fonctionnalités, qui semble avoir comme objectif principal le cryptage des fichiers. On à donc affaire vraisemblablement a un sort de rançongiciel (&amp;ldquo;ransomware&amp;rdquo;).
+On va tenter d&amp;rsquo;analyser à notre tour le comportement de celui-ci ainsi que quelques unes de ses variétés ultérieures."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://unic0rn-team.github.io/post/gonnacope-1/" />
+
+
+
+
+
+<link rel="stylesheet" href="https://unic0rn-team.github.io/assets/style.css" />
+
+<link rel="stylesheet" href="https://unic0rn-team.github.io/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="https://unic0rn-team.github.io/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="https://unic0rn-team.github.io/img/favicon.png" />
+
+
+<link href="https://unic0rn-team.github.io/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://unic0rn-team.github.io/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://unic0rn-team.github.io/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://unic0rn-team.github.io/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://unic0rn-team.github.io/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://unic0rn-team.github.io/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Les métamorphoses d&#39;un ransomware en batch : GonnaCope - part1"/>
+<meta name="twitter:description" content="# Billet 6 TL;DR Le 27 avril 2022 l&rsquo;environnement d&rsquo;analyse Any.Run (&quot;online sandbox&quot;) reçoit un échantillon intéressant portant le nom de G0nnaC0pe.bat téléchargé par l&rsquo;utilisateur @petrovic082. Fait remarquable, celui-ci est un script batch très riche en fonctionnalités, qui semble avoir comme objectif principal le cryptage des fichiers. On à donc affaire vraisemblablement a un sort de rançongiciel (&ldquo;ransomware&rdquo;).
+On va tenter d&rsquo;analyser à notre tour le comportement de celui-ci ainsi que quelques unes de ses variétés ultérieures."/>
+
+
+
+<meta property="og:title" content="Les métamorphoses d&#39;un ransomware en batch : GonnaCope - part1" />
+<meta property="og:description" content="# Billet 6 TL;DR Le 27 avril 2022 l&rsquo;environnement d&rsquo;analyse Any.Run (&quot;online sandbox&quot;) reçoit un échantillon intéressant portant le nom de G0nnaC0pe.bat téléchargé par l&rsquo;utilisateur @petrovic082. Fait remarquable, celui-ci est un script batch très riche en fonctionnalités, qui semble avoir comme objectif principal le cryptage des fichiers. On à donc affaire vraisemblablement a un sort de rançongiciel (&ldquo;ransomware&rdquo;).
+On va tenter d&rsquo;analyser à notre tour le comportement de celui-ci ainsi que quelques unes de ses variétés ultérieures." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unic0rn-team.github.io/post/gonnacope-1/" />
+<meta property="article:published_time" content="2022-08-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-08-04T00:00:00+00:00" /><meta property="og:site_name" content="unic0rn-team&#39;s billets" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="https://unic0rn-team.github.io/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >hello friend</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/archive">Archive</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/archive">Archive</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Les métamorphoses d&rsquo;un ransomware en batch : GonnaCope - part1</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2022-08-04
+        </span>
+
+        
+          
+        
+      
+
+      
+        <span class="post-author"
+          >— Written by unic0rn-team</span
+        >
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <h2 id="-billet-6"># Billet 6</h2>
+<h3 id="tldr"><strong>TL;DR</strong></h3>
+<p>Le 27 avril 2022 l&rsquo;environnement d&rsquo;analyse Any.Run (&quot;<em>online sandbox</em>&quot;) reçoit un échantillon intéressant portant le nom de <a href="https://app.any.run/tasks/dd989dee-7896-48fb-ab53-630be0eb248e/#">G0nnaC0pe.bat</a> téléchargé par l&rsquo;utilisateur @petrovic082. Fait remarquable, celui-ci est un script batch très riche en fonctionnalités, qui semble avoir comme objectif principal le cryptage des fichiers. On à donc affaire vraisemblablement a un sort de rançongiciel (&ldquo;ransomware&rdquo;).</p>
+<p>On va tenter d&rsquo;analyser à notre tour le comportement de celui-ci ainsi que quelques unes de ses variétés ultérieures. Comme toujours, on essayera aussi de dégager des indices nous permettant de reconstituer le mode opératoire de l&rsquo;acteur malicieux. La chronologie de son développement pourra aussi mettre en perspective la manière de l&rsquo;adversaire d&rsquo;adapter ses techniques par rapport au changement de ses objectifs.</p>
+<h3 id="1lenfance"><strong>1.L&rsquo;enfance</strong></h3>
+<p>On récupère donc le fichier <strong>G0nnaC0pe.cmd</strong> (<a href="https://www.virustotal.com/gui/file/ab71472e5a66740369c70715245a948d452a59ea7281233d6ad4c53dfa36b968/detection">ab71472e5a66740369c70715245a948d452a59ea7281233d6ad4c53dfa36b968</a>) téléchargé sur VirusTotal le 15 avril 2022. Suite à une rapide recherche, on trouve un deuxième échantillon portant le même nom (<a href="https://www.virustotal.com/gui/file/1de22192c8810ffd1200bdb143bf854c9a9546002cd55803c9969df8e9d00d3b/details">1de22192c8810ffd1200bdb143bf854c9a9546002cd55803c9969df8e9d00d3b</a>) téléchargé le 26 avril 2022 . Pour les besoins de notre analyse on va les appeler <strong>version1</strong> et évidemment <strong>version2</strong>.</p>
+<h4 id="a-verison-1">a. Verison 1</h4>
+<h5 id="first-stage---g0nnac0pecmd">First stage - G0nnaC0pe.cmd</h5>
+<p>Dès l&rsquo;ouverture du fichier on se rend compte qu&rsquo;il s&rsquo;agit d&rsquo;un script lourdement obfusqué :</p>
+<p><img src="/img/img156.png" alt=""></p>
+<p><em><strong>Figure1:</strong></em> <em>Script obfusqué</em></p>
+<p>Le premier indice qui nous aidera à comprendre la technique employé nous est donné par la commande &ldquo;<em>EnableDelayedExpansion</em>&rdquo; :</p>
+<p><img src="/img/img157.png" alt=""></p>
+<p><em><strong>Figure 2:</strong></em> <em>Activation de l&rsquo;expansion retardée des variables</em></p>
+<p><strong>L&rsquo;expansion retardée</strong> (&quot;<em>delayed expansion</em>&quot;) fait que les variables d&rsquo;un script batch soit développées au moment de l&rsquo;exécution, à la volée, plutôt qu&rsquo;au moment du parsing. Les paramètres sont exprimés entre deux signes pourcentage comme ceci: <em>%BeoPI:~14,1%</em>, suivies par leur définition :</p>
+<p><img src="/img/img158.png" alt=""></p>
+<p><em><strong>Figure 3:</strong></em> <em>L&rsquo;alphabet des paramètres</em></p>
+<p>On remarque également la présence de plusieurs caractères &ldquo;@&rdquo; auxquels l&rsquo;itération des paramètres semble s&rsquo;arrêter - signe qu&rsquo;on a affaire aux <strong>multiples niveaux</strong> d&rsquo;obfuscation. Mais comment peut-on interpréter le format d&rsquo;un tel paramètre ? En assemblent le contenu (chaîne de caractères) - où &ldquo;<em>l&rsquo;alphabet</em>&rdquo; - du paramètre dans un tableau ou chaque lettre sera indexé par rapport à sa position, on dégage la technique d&rsquo;obfuscation suivante :</p>
+<p><code>%paramètre:~valeur de l'index,nombre de caractères%</code></p>
+<p>Ainsi  la clef de lecture du paramètre <em>%BeoPI:~14,1%</em> est: &ldquo;<em>une occurrence à l&rsquo;index 14 du paramètre BeoPI</em>&rdquo; qui est dans notre cas la lettre &ldquo;e&rdquo;  :</p>
+<p><img src="/img/img159.png" alt=""></p>
+<p><em><strong>Figure 4:</strong></em> <em>Indexation de l&rsquo;alphabet</em></p>
+<p>Comme le code nous l&rsquo;indique, on doit itérer une fois pour chaque paramètre pour obtenir le texte en clair : une fois sur les minuscules, ensuite sur les majuscules et enfin sur les chiffres, toujours dans cette ordre. Une tâche fastidieuse et chronophage, qui peut être simplifié par l&rsquo;outil <a href="https://github.com/PCsXcetra/DecodeDelayedExpansionStrings">DecodeDelayedExpansionStrings</a>. Au bout de l&rsquo;opération on obtient un autre group de trois paramètres nécessaires à la désobfuscation du prochain bloc de code (après chaque caractère inclusif &ldquo;@&quot;):</p>
+<p><img src="/img/img160.png" alt=""></p>
+<p><img src="/img/img161.png" alt=""></p>
+<p><img src="/img/img162.png" alt=""></p>
+<p><em><strong>Figure 5:</strong></em> <em>Chaîne de désobfuscation</em></p>
+<p>Avec une bonne dose de patience, on épluche ainsi les 5 niveaux d&rsquo;obfuscation pour obtenir le script en clair :</p>
+<p><img src="/img/img163.png" alt=""></p>
+<p><em><strong>Figure 6:</strong></em> <em>Texte en clair</em></p>
+<p>On peut passer désormais à l&rsquo;analyse fonctionnelle de celui-ci.</p>
+<p>Après s&rsquo;avoir octroyé l&rsquo;attribut &ldquo;caché&rdquo;, l&rsquo;exécution du programme commence par inverser la fonctionnalité des boutons de la souris et par se rajoutant lui-même (%0) dans les clefs de régistres &ldquo;<em>[Local Machine]\CurrentVersion/Run</em>&rdquo; et  <em>[Current_User]\CurrentVersion\Run&rdquo;</em>. Il se replique aussi dans &ldquo;<em>UserProfile\StartMenu\Programs\Startup</em>&rdquo; en tant que &ldquo;<strong>autoexec.bat</strong>&rdquo; ( à chaque démarrage DOS recherche un tel fichier sur le lecteur par défaut et, s&rsquo;il le trouve, il l&rsquo;exécute) . Le but de tout cela est d&rsquo;assurer <strong>la persistance</strong> après le redémarrage.</p>
+<p><img src="/img/img164.png" alt=""></p>
+<p><em><strong>Figure 7:</strong></em> <em>Assurer la persistence</em></p>
+<p>En ouvrent un bon nombre de fenêtres &ldquo;cmd.exe&rdquo; pour cacher son exécution le script procède à l&rsquo;arrêt des certaines programmes et services, notamment Windows Defender (&quot;<a href="https://www.fichier.net/processus/msascui.exe.html">MSASCui.exe</a>&quot;) et Windows Update (&quot;<a href="https://www.malekal.com/wuauserv-windows-10/">wuauserv</a>&quot;). Il arrête également l&rsquo;accès partagé et le firewall local :</p>
+<p><img src="/img/img165.png" alt=""></p>
+<p><em><strong>Figure 8:</strong></em> <em>Désactivation des services de sécurité Windows</em></p>
+<p>A l&rsquo;aide d&rsquo;une autre couche d&rsquo;obfuscation, il arrêtera par la suite tous moteurs anti-viraux à partir d&rsquo;une liste des plus rependus (Sophos, Norton, McAfee,Symantec,Sygate,etc) qui pourraient être installés sur le poste de la victime :</p>
+<p><img src="/img/img166.png" alt=""></p>
+<p><em><strong>Figure 9:</strong></em> <em>Arrêt des services AV</em></p>
+<p>Une fois les services réseau (&quot;<em>netsvcs</em>&quot;) et d&rsquo;impression (&quot;<em>spoolnt</em>&quot;) stoppés à leur tour, le terrain est prêt pour l&rsquo;exploitation (&quot;<em>action on objective</em>&quot;). Pour cela il va boucler sur les sous-répertoires de &ldquo;User Profile&rdquo; en générant des fichiers avec un contenu aléatoire et l&rsquo;extension &ldquo;<strong>.cope</strong>&quot;, à l&rsquo;aide de la variable <em>%random%</em> (valeurs entre entre 0 et 32767).</p>
+<p>A l&rsquo;issue de cette opération le fichier &ldquo;ReadMe.txt&rdquo; ainsi produit contiendra le message de rançon avec l&rsquo;adresse du portefeuille Bitcoin affiché sur la console:</p>
+<p><img src="/img/img167.png" alt=""></p>
+<p><em><strong>Figure 10:</strong></em> <em>Affichage du message de rançon</em></p>
+<p>L&rsquo;intention de l&rsquo;attaquant se confirme donc : il s&rsquo;agit bel et bien d&rsquo;un ransomware. Mais, comme on peut le constater, il n&rsquo;y a pas de routine de chiffrement. Ceci laissant penser au fait qu&rsquo;il ne s&rsquo;agit que d&rsquo;un programme encore en développement.</p>
+<p>Après avoir nettoyé en mode silencieux tous les drives et avoir copié dessus les fichiers &ldquo;<strong>windows.inf</strong>&rdquo; et &ldquo;<strong>G0nnaC0pe.bat</strong>&rdquo; ( dont la fonctionnalité reste à analyser), le script procède, toujours depuis &ldquo;<em>UserProfiles</em>&quot;, au téléchargement à l&rsquo;aide du PowerShell de deux fichiers depuis Discord (&quot;<strong>G0nnaL0g.bat</strong>&rdquo; et &ldquo;<strong>G0nnaC0peRansN0te.bat</strong>&rdquo; ) qu&rsquo;il exécutera par la suite - on verra plus tard à quel but. Pourquoi le service Discord en guise de serveur C2 ? Car solution gratuite et facile à utiliser (pas besoin d&rsquo;exploiter un serveur tiers, ni de mettre en place une infrastructure dédiée souvent facile à détecter) avec une présence sur le réseau quasiment garantie :</p>
+<p><img src="/img/img168.png" alt=""></p>
+<p><em><strong>Figure 11:</strong></em> <em>Téléchargement du second stage depuis Discord</em></p>
+<p>La prochaine phase de l&rsquo;exécution verra l&rsquo;implémentation d&rsquo;un autre objectif : le <strong>mouvement latéral</strong> ou propagation. Cela sera réalisé par la création d&rsquo;un script &ldquo;<strong>mail.vbs</strong>&rdquo; qui envoie en attachement d&rsquo;un mail forgé une copie du programme déguisé en &ldquo;.doc&rdquo; avec message &ldquo;Here&rsquo;s that document&hellip;.&rdquo; à tous les contacts du carnet d&rsquo;adresses Outlook. Ce véritable mécanisme de propagation de type &ldquo;<strong>ver</strong>&rdquo; (&quot;<em>worm</em>&quot;) est censé d&rsquo;assurer l&rsquo;infection secondaire. Il peut suggerer également un possible vecteur initial d&rsquo;attaque de la campagne à l'étude:</p>
+<p><img src="/img/img169.png" alt=""></p>
+<p><em><strong>Figure 12:</strong></em> <em>Dissémination à l&rsquo;aide du script VBS</em></p>
+<p>Enfin le programme créera sur le Bureau un faux décrypteur ( &ldquo;<strong>G0nnaDecrypt0r.exe</strong>&quot;)  - comme vu plus haut, sans la routine de déchiffrement :</p>
+<p><img src="/img/img170.png" alt=""></p>
+<p><em><strong>Figure 13:</strong></em> <em>Faux décrypteur</em></p>
+<p>Littéralement tout un programme !  Pour résumer et avant de passer à l&rsquo;analyse des autres artéfacts, quelques observations préliminaires :</p>
+<ul>
+<li>il s&rsquo;agit d&rsquo;un script encore en développement, probablement mis en ligne sur VT pour tester le niveau détection anti-virale</li>
+<li>parmi les capacités opérationnelle souhaités on retrouve, outre les techniques typiques d&rsquo;un ransomware, un mécanisme d&rsquo;auto-propagation par usurpation du carnet d&rsquo;adresses d&rsquo;Outlook, ainsi que des mécanismes anti-analytiques par l&rsquo;emploi de plusieurs couches d&rsquo;obfuscation</li>
+</ul>
+<h4 id="second-stagea--g0nnac0pebat">Second stage.a -<strong>G0nnaC0pe.bat</strong></h4>
+<p><strong>G0nnaC0pe.bat</strong> (<a href="https://www.virustotal.com/gui/file/0dff760288b3dfebc812761a2596563e5f0aea8ffc9ca4a4c26fa46e74311122/details">0dff760288b3dfebc812761a2596563e5f0aea8ffc9ca4a4c26fa46e74311122</a>) est injecté dans les Auto-runs de la base de registres au début de exécution. Son rôle est de s&rsquo;assurer que le scénario d&rsquo;exploitation soit rejoué en cas de redémarrage, donc d&rsquo;assurer la persistance. La logique d&rsquo;exécution suit de très près celle du programme initial à quelques différences près.</p>
+<p>Au début il va créer un VB script appelé <strong>downloader.vbs</strong>. Celui-ci téléchargera (comme son nom l&rsquo;indique) le binaire <strong>GonnaCopeDL.exe</strong> depuis le même channel Discord :</p>
+<p><img src="/img/img191.png" alt=""></p>
+<p><em><strong>Figure 14:</strong></em> <em>Téléchargement de GonnaCopeDL.exe</em></p>
+<p>Ce comportement peut être liée à la reprise de la routine de chiffrement en cas de redémarrage. Son analyse ultérieure devra nous apporter des réponses.</p>
+<p>Ensuite la logique de remplacement d&rsquo;<strong>autoexec.bat</strong> par une copie de soi-même est déporté dans un bloc de code séparé:</p>
+<p><img src="/img/img172.png" alt=""></p>
+<p><em><strong>Figure 15:</strong></em> <em>Remplacement de autoexec.bat</em></p>
+<p>Le script se copie soi-même également dans <em>win.ini</em> et <em>system.ini</em> toujours pour assurer la persistance. On observe au passage que pas mal des fonctionnalités ont été redondées depuis le script initial :</p>
+<p><img src="/img/img173.png" alt=""></p>
+<p><em><strong>Figure 16:</strong></em> <em>Remplacement de win.ini et system.ini</em></p>
+<p>Le spreader <strong>mail.vbs</strong> est lui aussi recrée en changeant le sujet (&ldquo;Is this you?&quot;) et le message (&ldquo;Man that has got to be embarrassing! &ldquo;) :</p>
+<p><img src="/img/img174.png" alt=""></p>
+<p><em><strong>Figure 17:</strong></em> <em>Dissémination par VBS</em></p>
+<p>Une autre différence notable par rapport au script initial est la création d&rsquo;un fichier <strong>nokeyboard.reg</strong>. Une fois exécuté celui-ci bloque l&rsquo;accès au clavier. Le nettoyage de la clef <em>[LOCAL_MACHINE]Services\Mouclass</em> à le même effet au niveau de la souris:</p>
+<p><img src="/img/img175.png" alt=""></p>
+<p><em><strong>Figure 18:</strong></em> <em>Création de notkeyboard.reg</em></p>
+<p>Le but ainsi recherché serait de s&rsquo;assurer qu&rsquo;aucune intervention de la victime n&rsquo;est possible pour interrompre l&rsquo;exécution.</p>
+<p>Malgré ces différences, l&rsquo;objectif de ces deux chemins d&rsquo;exécution reste à la base identiques : briquer la machine en vue du chiffrement.</p>
+<h4 id="second-stageb---g0nnal0gbat">Second stage.b - G0nnaL0g.bat</h4>
+<p>Le premier artéfact téléchargé depuis Discord par le script initial est le fichier <strong>G0nnaL0g.bat</strong>. Sa seule raison d'être est d&rsquo;afficher du message de rançon, avec encore une fois la duplication d&rsquo;une fonctionnalité déjà présente dans le script initial :</p>
+<p><img src="/img/img176.png" alt=""></p>
+<p><em><strong>Figure 19:</strong></em> <em>G0nnaL0g.bat</em></p>
+<h4 id="second-stagec---g0nnac0peransn0tebat">Second stage.c - <strong>G0nnaC0peRansN0te.bat</strong></h4>
+<p>Le deuxième artéfact téléchargé depuis Discord est, malgré son extension, un binaire .Net et pas un script batch. On remarque immédiatement sa structure sommaire - une seule méthode liée à la classe <em>GonnaCopeRansNote</em> :</p>
+<p><img src="/img/img179.png" alt=""></p>
+<p><em><strong>Figure 20:</strong></em> <em>La méthode Main</em></p>
+<p>Etant inscrit lui aussi dans les Auto-runs de la base de registres, il remplit un seul rôle - afficher une fenêtre avec le message de rançon qui contient bien sûr l&rsquo;adresse factice d&rsquo;un portefeuille Bitcoin :</p>
+<p><img src="/img/img180.png" alt=""></p>
+<p><em><strong>Figure 21:</strong></em> <em>Affichage du message de rançon</em></p>
+<p>Et encore une fois une duplication des fonctionnalités, un peu comme si le développeur tente, en redondant les axes d&rsquo;exécution, d&rsquo;assurer un maximum de chances d&rsquo;atteindre ses objectifs. Ceci dénote aussi l'état de croquis sommaire de ce kit d&rsquo;exploitation.</p>
+<h4 id="third-stage--gonnacopedlexe">Third stage -GonnaCopeDL.exe</h4>
+<p>Récupéré à l&rsquo;aide du script <strong>download.vbs</strong> depuis le même channel Discord, <strong>GonnaCopeDL.exe</strong>(<a href="https://www.virustotal.com/gui/file/f9fdfb0d4e2d2ea06ce9222280cd03d25c9768dfa502b871846153be30816fd3">f9fdfb0d4e2d2ea06ce9222280cd03d25c9768dfa502b871846153be30816fd3</a>) est lui aussi un binaire .Net. Sa méthode Main télécharge du contenu dont le chemin est encodé en Base64. Après la désobfuscation la lecture du code dévoile la récupération d&rsquo;une archive GonnaCope.zip qui, une fois extraite dans AppData,  contiendra trois exécutables :</p>
+<p><img src="/img/img195.png" alt=""></p>
+<p><em><strong>Figure 22 :</strong></em> <em>Téléchargement du GonnaCope.zip</em></p>
+<p>Le rôle apparent y est donc de récupérer des binaires qui s&rsquo;occuperont,d&rsquo;après leur nom, du cryptage. Une autre étape d&rsquo;exécution se rajoute ainsi, en suivant le même principe de redoublement des fonctionnalités.</p>
+<h4 id="fourth-stage---gonnacopeexe">Fourth stage - GonnaCope.exe</h4>
+<p>On commence l&rsquo;analyse de la prochaine étape par examiner ainsi <strong>GonnaCope.exe</strong> (<a href="https://www.virustotal.com/gui/file/7388722c3a19854c1ccf19a92798a7cef0efae538e8e8ecf5e79620e6a49cea7">7388722c3a19854c1ccf19a92798a7cef0efae538e8e8ecf5e79620e6a49cea7</a>). Encore un binaire en .Net, celui-ci contient trois méthodes:</p>
+<p><img src="/img/img196.png" alt=""></p>
+<p><em><strong>Figure 23 :</strong></em> <em>La classe GonnaCope</em></p>
+<p>Le méthode <em>GonnaCope</em> sert à enrégistrer le programme dans la base de registres en tant que &ldquo;Java&rdquo; :</p>
+<p><img src="/img/img197.png" alt=""></p>
+<p><em><strong>Figure 24 :</strong></em> <em>La méthode GonnaCope</em></p>
+<p>La méthode <em>GonnaCopeLogger</em> est plus intéressante. Elle récolte des tokens des navigateurs présents sur la machine qu&rsquo;elle exfiltrera par la suite, ensemble avec des information sur la machine ( nom,architecture, adresse IP,etc) vers un compte Discord :</p>
+<p><img src="/img/img198.png" alt=""></p>
+<p><img src="/img/img199.png" alt=""></p>
+<p><em><strong>Figure 25 :</strong></em> <em>Exfiltration des tokens</em></p>
+<p>Fait intéressant le programme tentera de récupérer aussi les cookies Roblox si présents dans l&rsquo;environnement :</p>
+<p><img src="/img/img200.png" alt=""></p>
+<p><em><strong>Figure 26 :</strong></em> <em>Vol des cookies Roblox</em></p>
+<p>La troisième méthode <em>Webhooks</em> s&rsquo;occupera de l&rsquo;exfiltration des données vers Discord en format JSON :</p>
+<p><img src="/img/img201.png" alt=""></p>
+<p><em><strong>Figure 27 :</strong></em> <em>La méthode Webhooks</em></p>
+<p>Ce binaire introduit donc une nouvelle fonctionnalité : celle du <strong>vol des données</strong> (&quot;<em>infostealer</em>&quot;). Elle complémente la fonctionnalité d&rsquo;encryption des données et sert comme moyen de préssion dans l&rsquo;extorsion qui suivra un exploit réussi.</p>
+<p>La programme <strong>GonnaCopeCryptor.exe</strong>, censé exécuter la routine de cryptage, ne fait que d&rsquo;appliquer du texte aléatoire aux fichiers ciblés dans une liste des extensions passé dans la méthode Main, clairement un bouche-trou pour une fonctionnalité à venir :</p>
+<p><img src="/img/img202.png" alt=""></p>
+<p><img src="/img/img203.png" alt=""></p>
+<p><img src="/img/img204.png" alt=""></p>
+<p><em><strong>Figure 28 :</strong></em> <em>Fausse routine de cryptage</em></p>
+<p><strong>GonnaCopeRansNote.exe</strong> quant à lui il se contente d&rsquo;afficher le même message de rançon :</p>
+<p><img src="/img/img205.png" alt=""></p>
+<p><em><strong>Figure 29 :</strong></em> <em>Affichage du message de rançon</em></p>
+<p>Essayons maintenant de reconstruire les étapes du kill-chain  tel qu&rsquo;envisagée par l&rsquo;adversaire :</p>
+<p><img src="/img/img206.png" alt=""></p>
+<p><em><strong>Figure 30 :</strong></em> <em>Le kill-chain de la campagne</em></p>
+<p>On peut identifier trois fonctionnalités recherchés par le développeur, toutes répliqués au niveau des divers composants:</p>
+<ol>
+<li>Une fonctionnalité de <strong>encryption des fichiers</strong> (<em>ransomware</em>) pas encore implémenté.</li>
+<li>Une fonctionnalité de <strong>auto-réplication et dissémination</strong> (<em>worm</em>)</li>
+<li>Une fonctionnalité de <strong>vol et exfiltration de données</strong> (<em>stealer</em>)</li>
+</ol>
+<p>On peut également dresser un sommaire des techniques utilisés pour atteindre ces fonctionnalités, qui nous donneront une idée des ambitions du projet:</p>
+<ul>
+<li>Création d&rsquo;un mécanisme de auto-start</li>
+<li>Désactivation du gestionnaire de tâches</li>
+<li>Arrêt des services</li>
+<li>Mettre fin à exécution des applications</li>
+<li>Permutation des boutons de la souris</li>
+<li>Renommer les fichiers</li>
+<li>Collecte d&rsquo;informations sur la machine</li>
+<li>Collecte des données d&rsquo;accès aux tokens</li>
+<li>Envoi d&rsquo;un mail avec une copie de lui-même en pièce jointe</li>
+<li>Se copier soi-même sur les drives rattachés au système</li>
+<li>Utilisation d&rsquo;un portefeuille Bitcoin</li>
+</ul>
+<p>Tout cela caché derrière des couches successives d&rsquo;obfuscation afin d'éviter la détection par les moteurs anti-viraux. Un projet minutieux, encore en enfance, dont l&rsquo;histoire ne s&rsquo;arrête pas ici.</p>
+<p>A suivre&hellip;</p>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+            
+              <span class="button next">
+                <a href="https://unic0rn-team.github.io/post/cve-30190-5/">
+                  <span class="button__text">CVE-2022-30190 &#34;Follina&#34; - part 5</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a
+  href="https://unic0rn-team.github.io/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >hello friend</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span
+          >© 2022 Powered by
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span
+        >
+        <span
+          >Theme created by
+          <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span
+        >
+      </div>
+    
+  </div>
+</footer>
+
+<script src="https://unic0rn-team.github.io/assets/main.js"></script>
+<script src="https://unic0rn-team.github.io/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

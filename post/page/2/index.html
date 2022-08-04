@@ -55,7 +55,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unic0rn-team.github.io/post/" />
-<meta property="og:updated_time" content="2022-07-09T00:00:00+00:00" /><meta property="og:site_name" content="unic0rn-team&#39;s billets" />
+<meta property="og:updated_time" content="2022-08-04T00:00:00+00:00" /><meta property="og:site_name" content="unic0rn-team&#39;s billets" />
 
 
 
@@ -150,11 +150,11 @@
   <div class="posts">
     
       <div class="post on-list">
-        <h1 class="post-title"><a href="https://unic0rn-team.github.io/post/tmp/cve-30190-3/">CVE-2022-30190 &ldquo;Follina&rdquo; - part 3</a></h1>
+        <h1 class="post-title"><a href="https://unic0rn-team.github.io/post/gonnacope-1/">Les métamorphoses d&rsquo;un ransomware en batch : GonnaCope - part1</a></h1>
         <div class="post-meta">
           
             <span class="post-date">
-              2022-07-09
+              2022-08-04
             </span>
 
             
@@ -175,14 +175,92 @@
         <div class="post-content">
           
             
-              # Billet 3 TL-DR; Avec le buzz fait par la publication des démonstrateurs (POCs), il n&rsquo;a été qu&rsquo;une question de temps avant que les acteurs malveillants (&quot;threat actors&rdquo; - TA) ne s&rsquo;emparent de l&rsquo;exploit pour l&rsquo;incorporer dans leur arsenal, tout d&rsquo;abord pour profiter du fameux &ldquo;dwell time&rdquo; (le temps écoulé entre la publication d&rsquo;une vulnérabilité et l&rsquo;application de son correctif).
-Ainsi, des nombreux TA ont armé la vulnérabilité dans leur kit d&rsquo;exploitation en modifiant leurs mode opératoire (TTPs) en conséquence, avec un succès assez variable.
+              # Billet 6 TL;DR Le 27 avril 2022 l&rsquo;environnement d&rsquo;analyse Any.Run (&quot;online sandbox&quot;) reçoit un échantillon intéressant portant le nom de G0nnaC0pe.bat téléchargé par l&rsquo;utilisateur @petrovic082. Fait remarquable, celui-ci est un script batch très riche en fonctionnalités, qui semble avoir comme objectif principal le cryptage des fichiers. On à donc affaire vraisemblablement a un sort de rançongiciel (&ldquo;ransomware&rdquo;).
+On va tenter d&rsquo;analyser à notre tour le comportement de celui-ci ainsi que quelques unes de ses variétés ultérieures.
             
           
         </div>
         
           <div>
-            <a class="read-more button" href="/post/tmp/cve-30190-3/"
+            <a class="read-more button" href="/post/gonnacope-1/"
+              >Read more →</a
+            >
+          </div>
+        
+      </div>
+    
+      <div class="post on-list">
+        <h1 class="post-title"><a href="https://unic0rn-team.github.io/post/cve-30190-5/">CVE-2022-30190 &ldquo;Follina&rdquo; - part 5</a></h1>
+        <div class="post-meta">
+          
+            <span class="post-date">
+              2022-07-23
+            </span>
+
+            
+          
+          
+            <span class="post-author"
+              >— Written by unic0rn-team</span
+            >
+
+
+          
+        </div>
+
+        
+
+        
+
+        <div class="post-content">
+          
+            
+              #Billet 5 TL;DR L&rsquo;existence d&rsquo;une vulnérabilité ne signifie pas nécessairement qu&rsquo;un adversaire a les connaissances ou les compétences pour l&rsquo;exploiter. Cependant lorsque des données additionnelles émergent sous la forme des exploits publiés qui facilitent significativement son utilisation, l&rsquo;analyse du contexte et du mode opératoire (&ldquo;TTPs&rdquo;) des TA met en perspective la criticité de celle-ci, . C&rsquo;est également le cas de la &ldquo;Follina&rdquo; qui, depuis son publication, ne cesse pas de forcer à un rehaussement du niveau de risque à cause de son adoption par des différents attaquants avec des motivations et des modes opératoires divergentes.
+            
+          
+        </div>
+        
+          <div>
+            <a class="read-more button" href="/post/cve-30190-5/"
+              >Read more →</a
+            >
+          </div>
+        
+      </div>
+    
+      <div class="post on-list">
+        <h1 class="post-title"><a href="https://unic0rn-team.github.io/post/cve-30190-4/">CVE-2022-30190 &ldquo;Follina&rdquo; - part 4</a></h1>
+        <div class="post-meta">
+          
+            <span class="post-date">
+              2022-07-17
+            </span>
+
+            
+          
+          
+            <span class="post-author"
+              >— Written by unic0rn-team</span
+            >
+
+
+          
+        </div>
+
+        
+
+        
+
+        <div class="post-content">
+          
+            
+              # Billet 4 TL;DR Quelques jours après son publication l&rsquo;exploit se trouve dans l&rsquo;arsenal des acteurs proéminents de la cybercriminalité. Mais les groups à motivation financière (&quot;&quot;eCrime&rdquo;) ne sont pas les seuls à être attirés par Follina. Une autre catégorie d&rsquo;acteurs malicieux sont ceux qui ont comme but final l&rsquo;espionnage et les opérations d&rsquo;influence. Ils sont alignées avec des intérêts des états, pour la plupart subventionné par eux, et ils ont un mode opératoire très différent, privilégient la furtivité avec toujours exfiltration des données sensibles.
+            
+          
+        </div>
+        
+          <div>
+            <a class="read-more button" href="/post/cve-30190-4/"
               >Read more →</a
             >
           </div>
@@ -270,46 +348,6 @@ Après avoir procédé a l&rsquo;analyse de celui-ci Kevin Beaumont,un autre sp�
       </div>
     
       <div class="post on-list">
-        <h1 class="post-title"><a href="https://unic0rn-team.github.io/post/tmp/cve-30190-1/">CVE-2022-30190 &ldquo;Follina&rdquo; - part 1</a></h1>
-        <div class="post-meta">
-          
-            <span class="post-date">
-              2022-07-01
-            </span>
-
-            
-          
-          
-            <span class="post-author"
-              >— Written by unic0rn-team</span
-            >
-
-
-          
-        </div>
-
-        
-
-        
-
-        <div class="post-content">
-          
-            
-              # Billet 1 TL-DR; Le 27 mai 2022 @nao-sec découvre pendant le reverse hunting sur VirusTotal un fichier Word mis en ligne depuis la Biélorussie, intitulé &ldquo;05-2022-0438.doc&quot;( 06727ffda60359236a8029e0b3e8a0fd11c23313 ).
-Après avoir procédé a l&rsquo;analyse de celui-ci Kevin Beaumont découvre un vecteur d&rsquo;attaque inconnu qui abuse du composant msdt (Microsoft Support Diagnostic Tool) afin d&rsquo;obtenir l&rsquo;exécution du code arbitraire. Il qualifiera la vunérabilité comme étant un 0-Day et il lui donnera le nom de &ldquo;Follina&rdquo; d&rsquo;après le nom d&rsquo;un commune italienne de Trévise.
-            
-          
-        </div>
-        
-          <div>
-            <a class="read-more button" href="/post/tmp/cve-30190-1/"
-              >Read more →</a
-            >
-          </div>
-        
-      </div>
-    
-      <div class="post on-list">
         <h1 class="post-title"><a href="https://unic0rn-team.github.io/post/cve-30190-2/">CVE-2022-30190 &ldquo;Follina&rdquo; - part 2</a></h1>
         <div class="post-meta">
           
@@ -343,46 +381,6 @@ Après avoir procédé a l&rsquo;analyse de celui-ci Kevin Beaumont découvre un
         
           <div>
             <a class="read-more button" href="/post/cve-30190-2/"
-              >Read more →</a
-            >
-          </div>
-        
-      </div>
-    
-      <div class="post on-list">
-        <h1 class="post-title"><a href="https://unic0rn-team.github.io/post/tmp/cve-30190-2/">CVE-2022-30190 &ldquo;Follina&rdquo; - part 2</a></h1>
-        <div class="post-meta">
-          
-            <span class="post-date">
-              2022-07-01
-            </span>
-
-            
-          
-          
-            <span class="post-author"
-              >— Written by unic0rn-team</span
-            >
-
-
-          
-        </div>
-
-        
-
-        
-
-        <div class="post-content">
-          
-            
-              # Billet 2 TL-DR; Suite à la publication de l&rsquo;existence de la 0-Day, des POC (démonstrateurs) validant son exploitabilité ont commencés à être publiés rapidement. Comme pour toutes les vulnérabilités critiques, il convient de tester ceux-ci afin de valider leur exploitabilité et leur pertinence par rapport à l&rsquo;environnement opérationnel.
-2.POCs à surprises Le système cible pour nos tests est un Windows 10 Professionnel x64 version 21H1 avec MS Office 2016. Pour notre banc d&rsquo;essai on a décidé de choisir le démonstrateur publié par John Hammond (HuntressLab) qui a l&rsquo;avantage de pouvoir tester plusieurs scénarios d&rsquo;exploitation.
-            
-          
-        </div>
-        
-          <div>
-            <a class="read-more button" href="/post/tmp/cve-30190-2/"
               >Read more →</a
             >
           </div>

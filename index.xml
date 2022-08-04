@@ -15,6 +15,27 @@
     
     
     <item>
+      <title>Les métamorphoses d&#39;un ransomware en batch : GonnaCope - part1</title>
+      <link>https://unic0rn-team.github.io/post/gonnacope-1/</link>
+      <pubDate>Thu, 04 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://unic0rn-team.github.io/post/gonnacope-1/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          # Billet 6 TL;DR Le 27 avril 2022 l&amp;rsquo;environnement d&amp;rsquo;analyse Any.Run (&amp;quot;online sandbox&amp;quot;) reçoit un échantillon intéressant portant le nom de G0nnaC0pe.bat téléchargé par l&amp;rsquo;utilisateur @petrovic082. Fait remarquable, celui-ci est un script batch très riche en fonctionnalités, qui semble avoir comme objectif principal le cryptage des fichiers. On à donc affaire vraisemblablement a un sort de rançongiciel (&amp;ldquo;ransomware&amp;rdquo;).
+On va tenter d&amp;rsquo;analyser à notre tour le comportement de celui-ci ainsi que quelques unes de ses variétés ultérieures.
+          
+        
+        </description>
+    </item>
+    
+    <item>
       <title>CVE-2022-30190 &#34;Follina&#34; - part 5</title>
       <link>https://unic0rn-team.github.io/post/cve-30190-5/</link>
       <pubDate>Sat, 23 Jul 2022 00:00:00 +0000</pubDate>
