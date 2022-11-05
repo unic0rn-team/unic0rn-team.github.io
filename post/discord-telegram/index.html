@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Les services Disord et Telegram en tant que vecteurs d&#39;attaque et amplification ::
+        unic0rn-team&#39;s billets — unic0rn-team&#39;s musings
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="# Billet 7 TL;DR
+Les applications de messagerie sont devenues très populaires en partie grâce à leurs fonctionnalités qui vont au-delà de l&amp;rsquo;envoi de messages aux destinataires. Des applications comme Discord et Telegram ont des éléments sous-jacents qui permettent aux utilisateurs de créer et de partager des programmes ou d&amp;rsquo;autres types de contenu utilisés au sein de la plate-forme. Ces programmes, familièrement appelés &amp;ldquo;bots&amp;rdquo;, ou tout autre contenu permettent aux utilisateurs de partager des médias, de jouer à des jeux, de modérer des canaux ou toute autre tâche automatisée qu&amp;rsquo;un développeur peut concevoir."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://unic0rn-team.github.io/post/discord-telegram/" />
+
+
+
+
+
+<link rel="stylesheet" href="https://unic0rn-team.github.io/assets/style.css" />
+
+<link rel="stylesheet" href="https://unic0rn-team.github.io/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="https://unic0rn-team.github.io/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="https://unic0rn-team.github.io/img/favicon.png" />
+
+
+<link href="https://unic0rn-team.github.io/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://unic0rn-team.github.io/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://unic0rn-team.github.io/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://unic0rn-team.github.io/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://unic0rn-team.github.io/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://unic0rn-team.github.io/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Les services Disord et Telegram en tant que vecteurs d&#39;attaque et amplification"/>
+<meta name="twitter:description" content="# Billet 7 TL;DR
+Les applications de messagerie sont devenues très populaires en partie grâce à leurs fonctionnalités qui vont au-delà de l&rsquo;envoi de messages aux destinataires. Des applications comme Discord et Telegram ont des éléments sous-jacents qui permettent aux utilisateurs de créer et de partager des programmes ou d&rsquo;autres types de contenu utilisés au sein de la plate-forme. Ces programmes, familièrement appelés &ldquo;bots&rdquo;, ou tout autre contenu permettent aux utilisateurs de partager des médias, de jouer à des jeux, de modérer des canaux ou toute autre tâche automatisée qu&rsquo;un développeur peut concevoir."/>
+
+
+
+<meta property="og:title" content="Les services Disord et Telegram en tant que vecteurs d&#39;attaque et amplification" />
+<meta property="og:description" content="# Billet 7 TL;DR
+Les applications de messagerie sont devenues très populaires en partie grâce à leurs fonctionnalités qui vont au-delà de l&rsquo;envoi de messages aux destinataires. Des applications comme Discord et Telegram ont des éléments sous-jacents qui permettent aux utilisateurs de créer et de partager des programmes ou d&rsquo;autres types de contenu utilisés au sein de la plate-forme. Ces programmes, familièrement appelés &ldquo;bots&rdquo;, ou tout autre contenu permettent aux utilisateurs de partager des médias, de jouer à des jeux, de modérer des canaux ou toute autre tâche automatisée qu&rsquo;un développeur peut concevoir." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unic0rn-team.github.io/post/discord-telegram/" />
+<meta property="article:published_time" content="2022-11-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-11-05T00:00:00+00:00" /><meta property="og:site_name" content="unic0rn-team&#39;s billets" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="https://unic0rn-team.github.io/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >hello friend</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/archive">Archive</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/archive">Archive</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Les services Disord et Telegram en tant que vecteurs d&rsquo;attaque et amplification</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2022-11-05
+        </span>
+
+        
+          
+        
+      
+
+      
+        <span class="post-author"
+          >— Written by unic0rn-team</span
+        >
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <h2 id="-billet-7"># Billet 7</h2>
+<p><strong>TL;DR</strong></p>
+<p>Les applications de messagerie sont devenues très populaires en partie grâce à leurs fonctionnalités qui vont au-delà de l&rsquo;envoi de messages aux destinataires. Des applications comme Discord et Telegram ont des éléments sous-jacents qui permettent aux utilisateurs de créer et de partager des programmes ou d&rsquo;autres types de contenu utilisés au sein de la plate-forme. Ces programmes, familièrement appelés &ldquo;bots&rdquo;, ou tout autre contenu permettent aux utilisateurs de partager des médias, de jouer à des jeux, de modérer des canaux ou toute autre tâche automatisée qu&rsquo;un développeur peut concevoir.</p>
+<p>Les cybercriminels ont compris comment tirer parti de cette situation pour leurs propres gains. Principalement  en conjonction avec des exfiltrateurs de données (stealers), les cybercriminels ont trouvé le moyen d&rsquo;utiliser ces plates-formes pour héberger, distribuer et exécuter diverses fonctions qui leur permettent finalement de voler des informations d&rsquo;identification ou d&rsquo;autres informations à des utilisateurs peu méfiants.</p>
+<p>Voici un synoptique non exhaustif d&rsquo;utilisation de ces deux plateformes comme vecteur d&rsquo;attaque.</p>
+<ol>
+<li>
+<h3 id="utilisation-malveillante-de-discord">Utilisation malveillante de Discord</h3>
+</li>
+</ol>
+<p>Avec plus de 250 millions d’utilisateurs à travers le monde, Discord, un service de discussion en ligne crée en 2015 est exploité par des pirates pour répandre et contrôler leurs malwares.</p>
+<p><img src="/img/img207.png" alt=""></p>
+<h4 id="-quest-ce-que-cest--">## Qu’est-ce que c’est ? :</h4>
+<p>Discord est une plateforme de communication et partage de contenu en ligne utilisée depuis sa création principalement par des jeunes. A l’origine, il s’agissait de contenu très oriénté jeux-video, et peu à peu, il est devenu un espace de discussion plus classique.</p>
+<p>Cette plateforme est accessible avec une simple connexion internet et un compte utilisateurs, et peut être utilisée sans client lourd bien qu’il soit aussi possible de l’installer. Discord propose entre autres la possibilité de partager des liens, ainsi que du contenu de type fichier, d’un utilisateur à un autre.</p>
+<p>Ce qu’il est important de savoir c’est que les jeunes qui utilisaient discord pour jouer avec leurs amis il y a quelques années, l’utilisent toujours aujourd’hui pour garder le contact, et ce même en dehors du contexte privé, par exemple au travail. En résumé il s’agit d’un réseau social au même titre que facebook, twitter ou messenger bien que le contenu soit différent.</p>
+<h4 id="-pourquoi-les-pirates-lutilisent--">## Pourquoi les pirates l’utilisent ? :</h4>
+<p>Comme tout réseau social, Discord est avant tout un terrain de chasse privilégié par les adeptes du social engineering. Bien qu’il n’offre pas accès à autant d’informations personnels que Facebook par exemple, il permet la mise en relation entre plusieurs individus.</p>
+<p>Les 250 millions d’utilisateurs, pour la plupart des jeunes, sont autant de cibles potentielles. Et les groupes de discussion en accès quasi-libre sont nombreux.</p>
+<p>Important aussi de savoir que Discord est un service utilisant un système de BOT permettant par essence de manager plus facilement les groupes de discussion. Et ce système de BOT est exploitable et exploité par des acteurs malveillants.</p>
+<p>Des malwares écris en langages cross-plateforme et basées sur l’API Discord ainsi que des bots malveillants existent dans des repositories GitHub liés à la plateforme Discord. L’exemple typique c’est un RootKit Discord nommé littéralement DiscordRootkit. Il est écrit en python et permet entre autres l’ouverture d’un Shell, la prise de captures d’écrans ou de photo via la webcam, le key-logging, ou encore le téléchargement de contenu via un lien spécifié. Ce malware est open source, n’importe qui peut donc y avoir accès.</p>
+<p>Ci-dessous, un graph VirusTotal montrant une petite portion de la quantité faramineuse de malware hébergés sur le CDN de Discord :</p>
+<p><img src="/img/img208.png" alt=""></p>
+<h4 id="-pourquoi-en-parle-t-on-maintenant--">## Pourquoi en parle-t-on maintenant ? :</h4>
+<p>Discord n’est pas un service récent. Son utilisation malveillante n’est pas un phénomène nouveau car le risque qu’il représente a toujours existé. Pour autant, le volume de détection impliquant discord est en très rapide augmentation.</p>
+<p>Sophos indique avoir constaté en deux mois, un nombre de détection 140 fois supérieur à celui constaté en 2020 sur la même période. Rien que sur le mois d’avril, 9500 URL hébergeant des malwares ont été détectée sur le CDN de Discord.</p>
+<p><img src="/img/img209.png" alt=""></p>
+<p>Cette croissance de la menace s’explique par un ensemble de facteurs :</p>
+<p>Discord se révèle depuis peu aux yeux des pirates comme un moyen fiable et efficace de diffuser du contenu vérolé, dans un environnement plein de cibles potentielles, avec des outils facilement exploitables. La surface d’attaque est énorme, elle peut affecter les particuliers comme les entreprises. Les moyens nécessaires pour atteindre une cible sont facilement accessibles, et ne nécessitent pas de compétences très importantes.</p>
+<h4 id="-quelles-leçons-en-tirer-">## Quelles leçons en tirer ?</h4>
+<p>Discord en tant que telle n’est pas un service malveillant et son utilisation habituelle n’est pas non plus une activité malveillante. Pour autant il est désormais évident qu’il s’agit d’une porte d’entrée pour tout un tas de menaces, et qu’elle est activement utilisée à cette fin par un grand nombre d’acteurs, allant du script kiddies aux groupes les plus réputés en passant par les scammers.</p>
+<p>Par conséquent, dans le cadre de l’activité professionnelle, on ne peut pas se contenter de la légitimité du service, ou de l’utilisation faite par un employé, comme seuls arguments au moment de prendre des mesures contre sa présence au sein du périmètre à défendre.</p>
+<p>Sources :</p>
+<p><a href="https://blog.checkpoint.com/2021/10/21/using-discord-infrastructure-for-malicious-intent/">https://blog.checkpoint.com/2021/10/21/using-discord-infrastructure-for-malicious-intent/</a></p>
+<p><a href="https://intel471.com/blog/how-cybercriminals-are-using-messaging-apps-to-launch-malware-schemes">https://intel471.com/blog/how-cybercriminals-are-using-messaging-apps-to-launch-malware-schemes</a></p>
+<p><a href="https://news.sophos.com/en-us/2021/07/22/malware-increasingly-targets-discord-for-abuse/">https://news.sophos.com/en-us/2021/07/22/malware-increasingly-targets-discord-for-abuse/</a></p>
+<ol start="2">
+<li>
+<h3 id="utilisation-malveillante-de-telegram">Utilisation malveillante de Telegram</h3>
+</li>
+</ol>
+<h4 id="telegram-quest-ce-que-cest-">##Telegram qu&rsquo;est ce que c&rsquo;est ?</h4>
+<p>Telegram Messenger est une application et un service de messagerie instantanée multiplateforme en freemium hébergé dans un cloud, créée en 2013 par les frères <!-- raw HTML omitted -->Nikolaï<!-- raw HTML omitted --> et Pavel Durov, fondateurs de VKontate, le réseau social dominant en Russie. Telegram est basée à Dubaï.</p>
+<p>Les deux frères, opposants de Vladimir Poutine, souhaitaient développer un moyen de communiquer hors du regard du FSB, le service secret russe chargé des affaires de sécurité intérieure.</p>
+<h4 id="sécurité-sous-telegram-">##Sécurité sous Telegram :</h4>
+<p>Les messages sont chiffrés via un procédé de chiffrement maison nommé MTProto (cryptographie symétrique) et transitent via les serveurs de Telegram. Les messages sont déchiffrables pour Telegram LLC et stockés durablement sur les serveurs de celle-ci.</p>
+<p><img src="/img/img210.png" alt=""></p>
+<ul>
+<li>Utilisation d’une clé secrète au lieu du lien standard « login + mot de passe » (la clé est créée au moment de l’enregistrement du client et est cryptée de manière sécurisée);</li>
+<li>Utilisation de deux types de cryptage : client-serveur (pour la messagerie régulière) et client-client (pour les conversations secrètes) ;</li>
+<li>La transmission du trafic via les canaux Telegram est déguisée en une connexion TSL / SSL standard, mais à l’intérieur des données est cryptée de telle sorte que rien ne peut être reconnu;</li>
+<li>MTProto Proxy est un type spécial de proxy conçu spécifiquement pour le messager Telegram, ce qui signifie que les autres applications ne fonctionnent pas dessus et que le trafic Internet régulier ne peut pas être transmis via ce protocole.</li>
+</ul>
+<p>Je vous renvoie vers cette vidéos pour plus d&rsquo;explication sur le fonctionnement du protocole : <a href="https://www.youtube.com/watch?v=x8_86qcVzxI">Complément : Le protocole MTProto (comment Telegram sécurise les messages) - YouTube</a></p>
+<p>Ou pour encore plus de détails vers cette article : <a href="https://t9gram.com/p/security-in-telegram">Sécurité dans Telegram. Dans quelle mesure le messager est-il sécurisé et peut-il être piraté?</a></p>
+<h4 id="les-dangers-de-telegram-">##Les dangers de Telegram :</h4>
+<h2 id="eternity-projects-">Eternity Project’s :</h2>
+<p>Un bon exemple des capacités de Telegram pour les acteurs malveillant est le projet &ldquo;Eternity&rdquo; , le projet eternity est un ensemble de malware avec des fonctions différente vendu ensemble ou séparément sur le darkweb ou sur Telegram qui utilise Telegram pour contrôler la machine infecter, s&rsquo;installer ou exfiltrer des données. </p>
+<p><img src="/img/img211.png" alt=""></p>
+<h3 id="telegram-builder-">Telegram Builder :</h3>
+<p>Cette fonctionnalités permet via un telegram bot de créer le binaire depuis telegram puis de le télécharger.</p>
+<h3 id="stealer-">Stealer :</h3>
+<p>Le développeur vend le module Stealer pour 260 $ en abonnement annuel. L’Eternity Stealer vole les mots de passe, les cookies, les cartes de crédit et les portefeuilles cryptographiques de la machine de la victime et les envoie au bot Telegram de TA.</p>
+<p>Les caractéristiques du logiciel malveillant voleur mentionné sur le site Web TAs et le canal Telegram sont:</p>
+<ul>
+<li>Collection de navigateurs (mots de passe, cartes de crédit, cookies, remplissage automatique, jetons, historique, signets):</li>
+<li>Chrome, Firefox, Edge, Opera, Chromium, Vivaldi, IE et +20 autres.</li>
+<li>Clients de messagerie : Thunderbird, Outlook, FoxMail, PostBox, MailBird.</li>
+<li>Messagers: Telegram, Discord, WhatsApp, Signal, Pidgin, RamBox.</li>
+<li>Portefeuilles de crypto-monnaie froids: Atomic, Binance, Coinomi, Electrum, Exodus, Guarda, Jaxx, Wasabi, Zcash, BitcoinCore, DashCore, DogeCore, LiteCore, MoneroCore.</li>
+<li>Extensions de crypto-monnaie du navigateur: MetaMask, BinanceChain, Coinbase Wallet et 30+ autres.</li>
+<li>Gestionnaires de mots de passe: KeePass, NordPass, LastPass, BitWarden, 1Password, RoboForm et 10+ plus.</li>
+<li>Clients VPN : WindscribeVPN, NordVPN, EarthVPN, ProtonVPN, OpenVPN, AzireVPN.</li>
+<li>Clients FTP : FileZilla, CoreFTP, WinSCP, Snowflake, CyberDuck.</li>
+<li>Logiciel de jeu: session Steam, Twitch, clés de diffusion OBS.</li>
+<li>Informations d’identification du système : mots de passe Credman, mots de passe Vault, mots de passe réseaux).</li>
+</ul>
+<p>D’autres options leur sont présentées via le bot pour des fonctionnalités telles que AntiVM qui permet de sortir d&rsquo;une machine virtuelle et AntiRepeat qui permet d&rsquo;empêcher une seconde exécution du malware afin de rester discret.</p>
+<h3 id="mineur-">Mineur :</h3>
+<p>Le développeur vend le module Miner pour  <strong>90 $</strong> en abonnement annuel. Eternity Miner est un programme malveillant qui utilise les ressources d’un ordinateur infecté pour extraire de la crypto-monnaie.</p>
+<p>Les caractéristiques du logiciel malveillant mineur mentionné sur le site Web de TA et le canal Telegram sont:</p>
+<ul>
+<li>Démarrage</li>
+<li>Petite taille (quelques octets)</li>
+<li>Exploitation minière Monero silencieuse</li>
+<li>Redémarrer en cas d’arrêt</li>
+<li>Masqué dans le gestionnaire de tâches</li>
+</ul>
+<h3 id="ransomware-">Ransomware :</h3>
+<p>Le développeur vend le Eternity Ransomware pour 490 $. Eternity Ransomware est un programme malveillant qui empêche les utilisateurs d’accéder à leur machine, soit en verrouillant l’écran du système, soit en cryptant les fichiers des utilisateurs jusqu’à ce qu’une rançon soit payée.</p>
+<ul>
+<li>Les caractéristiques du ransomware mentionnées sur le site Web de TA et le canal Telegram sont:</li>
+<li>Chiffre tous les documents, photos et bases de données sur les disques, les partages locaux et les clés USB.</li>
+<li>Chiffrement hors ligne (ne nécessite pas de connexion réseau)</li>
+<li>Utilise un algorithme de cryptage très puissant utilisant à la fois AES et RSA.</li>
+<li>La possibilité de définir une limite de temps après laquelle les fichiers ne peuvent pas être décryptés.</li>
+<li>Exécution à une date précise</li>
+<li>Actuellement, FUD (0/26)</li>
+<li>Petite taille ~130kb</li>
+</ul>
+<p>Voici la fenêtre qu&rsquo;aura l&rsquo;utilisateur victime du ransomware, les acteurs malveillants ayant acheter le ransomware ont la possibilité de le remplir avec leurs message propres ainsi que de les renvoyer vers leurs cryptowallet.</p>
+<p><img src="/img/img212.png" alt=""></p>
+<h3 id="kit-de-phishing">Kit de phishing </h3>
+<p>D&rsquo;autres techniques sont utilisé en utilisant Telegram comme le phishing via un bot.</p>
+<p>Les escrocs publie des annonces sur des sites spécialisé comme leboncoin, il demande ensuite a leur victime de continuer la discutions par une messagerie privés, puis les renvoie vers une copie du site fournis par un bot telegram qui les renvoie ensuite vers une page de paiement.</p>
+<p>En résumé :</p>
+<ol>
+<li>
+<p>Création d&rsquo;une annonce : </p>
+<p><img src="/img/img213.png" alt=""></p>
+</li>
+<li>
+<p>Contact vers le bot Telegram avec les infos de l&rsquo;annonce -&gt; le Bot renvoie ensuite une copie du site:</p>
+<p><img src="/img/img214.png" alt=""></p>
+</li>
+</ol>
+<p>​3. Le faux site renvoie vers une fausse page de paiement:</p>
+<p>​   <img src="/img/img215.png" alt=""></p>
+<p>Le système est simple et direct, ce qui le rend d’autant plus populaire. Il y a cependant d’autres raisons derrière sa popularité croissante, telles que la gestion automatisée et l’expansion grâce à des chatbots Telegram spéciaux. Plus de 5 000 utilisateurs (escrocs) étaient enregistrés dans 40 chats Telegram les plus populaires à la fin de 2020.</p>
+<p>À l’heure actuelle, les escroc n’ont qu’à envoyer un lien avec le produit appât au chatbot, qui génère ensuite un kit de phishing complet comprenant l’URL du courrier, le paiement et le remboursement. Il existe plus de 10 types de robots Telegram qui créent des pages d’escroquerie pour des marques de Bulgarie, de République tchèque, de France, de Pologne et de Roumanie. Pour chaque marque et pays, les escrocs écrivent des scripts qui aident les travailleurs débutants à se connecter à des sites étrangers et à communiquer avec les victimes dans la langue locale.Les chatbots ont également des magasins où vous pouvez acheter des comptes sur divers marchés, portefeuilles électroniques, envois ciblés et manuels, ou même engager un avocat pour vous représenter devant les tribunaux.</p>
+<p><strong>A noter que cela existe également dans un contexte d&rsquo;entreprise, les produits et les site d&rsquo;annonce sont alors remplacé par des pages d&rsquo;authentification office360 ou autres.</strong></p>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+            
+              <span class="button next">
+                <a href="https://unic0rn-team.github.io/post/gonnacope-1/">
+                  <span class="button__text">Les métamorphoses d&#39;un ransomware en batch : GonnaCope - part1</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a
+  href="https://unic0rn-team.github.io/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >hello friend</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span
+          >© 2022 Powered by
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span
+        >
+        <span
+          >Theme created by
+          <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span
+        >
+      </div>
+    
+  </div>
+</footer>
+
+<script src="https://unic0rn-team.github.io/assets/main.js"></script>
+<script src="https://unic0rn-team.github.io/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>
