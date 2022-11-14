@@ -9,10 +9,31 @@
     <description>Recent content in Posts on unic0rn-team&#39;s billets</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 05 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 14 Nov 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://unic0rn-team.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Virus Bulletin Conference Prague 2022 - part 1</title>
+      <link>https://unic0rn-team.github.io/post/vb-part1/</link>
+      <pubDate>Mon, 14 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://unic0rn-team.github.io/post/vb-part1/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          #Billet 8 TL;DR Cette année entre 28 et 30 septembre j&amp;rsquo;ai participé à la conférence Virus Bulletin à Prague. Dans la série qui suit je vous partagerai mes notes autour de quelques unes de présentations qui m&amp;rsquo;ont particulièrement marqués. Le but de cela, a part le partage des connaissances, est de mettre en lumière quelques avancements intéressantes dans le domaine de l&amp;rsquo;analyse malware et du renseignement sur les menaces.
+  Luca Nagy (Google) - Glupteba takedown   Luca continue avec l&#39;équipe Threat Analysis Group (TAG) de Google le travail commencé chez Sophos en suivant l&amp;rsquo;acteur malicieux Glupteba.
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>Les services Discord et Telegram en tant que vecteurs d&#39;attaque et amplification</title>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Virus Bulletin Conference Prague 2022 - part 1 ::
+        unic0rn-team&#39;s billets — unic0rn-team&#39;s musings
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="#Billet 8 TL;DR Cette année entre 28 et 30 septembre j&amp;rsquo;ai participé à la conférence Virus Bulletin à Prague. Dans la série qui suit je vous partagerai mes notes autour de quelques unes de présentations qui m&amp;rsquo;ont particulièrement marqués. Le but de cela, a part le partage des connaissances, est de mettre en lumière quelques avancements intéressantes dans le domaine de l&amp;rsquo;analyse malware et du renseignement sur les menaces.
+  Luca Nagy (Google) - Glupteba takedown   Luca continue avec l&#39;équipe Threat Analysis Group (TAG) de Google le travail commencé chez Sophos en suivant l&amp;rsquo;acteur malicieux Glupteba."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://unic0rn-team.github.io/post/vb-part1/" />
+
+
+
+
+
+<link rel="stylesheet" href="https://unic0rn-team.github.io/assets/style.css" />
+
+<link rel="stylesheet" href="https://unic0rn-team.github.io/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="https://unic0rn-team.github.io/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="https://unic0rn-team.github.io/img/favicon.png" />
+
+
+<link href="https://unic0rn-team.github.io/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://unic0rn-team.github.io/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://unic0rn-team.github.io/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://unic0rn-team.github.io/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://unic0rn-team.github.io/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://unic0rn-team.github.io/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Virus Bulletin Conference Prague 2022 - part 1"/>
+<meta name="twitter:description" content="#Billet 8 TL;DR Cette année entre 28 et 30 septembre j&rsquo;ai participé à la conférence Virus Bulletin à Prague. Dans la série qui suit je vous partagerai mes notes autour de quelques unes de présentations qui m&rsquo;ont particulièrement marqués. Le but de cela, a part le partage des connaissances, est de mettre en lumière quelques avancements intéressantes dans le domaine de l&rsquo;analyse malware et du renseignement sur les menaces.
+  Luca Nagy (Google) - Glupteba takedown   Luca continue avec l&#39;équipe Threat Analysis Group (TAG) de Google le travail commencé chez Sophos en suivant l&rsquo;acteur malicieux Glupteba."/>
+
+
+
+<meta property="og:title" content="Virus Bulletin Conference Prague 2022 - part 1" />
+<meta property="og:description" content="#Billet 8 TL;DR Cette année entre 28 et 30 septembre j&rsquo;ai participé à la conférence Virus Bulletin à Prague. Dans la série qui suit je vous partagerai mes notes autour de quelques unes de présentations qui m&rsquo;ont particulièrement marqués. Le but de cela, a part le partage des connaissances, est de mettre en lumière quelques avancements intéressantes dans le domaine de l&rsquo;analyse malware et du renseignement sur les menaces.
+  Luca Nagy (Google) - Glupteba takedown   Luca continue avec l&#39;équipe Threat Analysis Group (TAG) de Google le travail commencé chez Sophos en suivant l&rsquo;acteur malicieux Glupteba." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unic0rn-team.github.io/post/vb-part1/" />
+<meta property="article:published_time" content="2022-11-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-11-14T00:00:00+00:00" /><meta property="og:site_name" content="unic0rn-team&#39;s billets" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="https://unic0rn-team.github.io/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >hello friend</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/archive">Archive</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/archive">Archive</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Virus Bulletin Conference Prague 2022 - part 1</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2022-11-14
+        </span>
+
+        
+          
+        
+      
+
+      
+        <span class="post-author"
+          >— Written by unic0rn-team</span
+        >
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <h2 id="billet-8">#Billet 8</h2>
+<h3 id="tldr">TL;DR</h3>
+<p>Cette année  entre 28 et 30 septembre j&rsquo;ai participé à la conférence Virus Bulletin à Prague. Dans la série qui suit je vous partagerai mes notes autour de quelques unes de présentations qui m&rsquo;ont particulièrement marqués. Le but de cela, a part le partage des connaissances, est de mettre en lumière quelques avancements intéressantes dans le domaine de l&rsquo;analyse malware et du renseignement sur les menaces.</p>
+<p><img src="/img/img227.png" alt=""></p>
+<ol>
+<li>
+<h3 id="luca-nagy-google---glupteba-takedown">Luca Nagy (Google) - Glupteba takedown</h3>
+</li>
+</ol>
+<p>Luca continue avec l'équipe <strong>Threat Analysis Group (TAG)</strong> de Google le travail commencé chez Sophos en suivant  l&rsquo;acteur malicieux Glupteba. Intitulé &ldquo;UNCOVERING A BROAD CRIMINAL  ECOSYSTEM POWERED BY ONE OF  THE LARGEST BOTNETS, GLUPTEBA&rdquo; sa présentation dévoile les efforts qui ont culminé en décembre 2021 avec le démantèlement par Google de l&rsquo;infrastructure de ce botnet et avec la suspension complète de ses activités pour plus de 6 mois.</p>
+<p><img src="/img/img228.png" alt=""></p>
+<p>Qu&rsquo;est que c&rsquo;est donc Glupteba ? Il s&rsquo;agit d&rsquo;un botnet qui comprends plus d&rsquo;un million de machines infectés, en activité depuis 2011, attribué a une organisation criminelle opérant depuis la Russie. Deux modelés de monétisation ont été observés : <strong>Pay-per-Install (PPI)</strong> - les clients soumettent leur logiciel malveillant (un spambot, un faux logiciel antivirus ou un cheval de Troie/backdoor) au service PPI, qui facture par millier d&rsquo;installations réussies, en fonction de la localisation géographique des victimes souhaitées - et <strong>Traffic-Distribution-Systems (TDS)</strong> -  des sites Web intermédiaires qui dirigent le flux de trafic HTTP d&rsquo;utilisateurs depuis les publicités en ligne jusqu&rsquo;aux destinations finales.</p>
+<p>D&rsquo;une très haute sophistication technique, Glupteba est connu pour le vol des informations d&rsquo;identification et des cookies depuis les hôtes infectés, pour miner des crypto-monnaies, et pour déployer/exploiter des composants proxy. Cela à lieu à travers l&rsquo;implémentation des fonctionnalités suivantes :</p>
+<ul>
+<li>Le dropper utilise <strong>la blockchain</strong> pour mettre à jour ses domaines C2 - premier TA connu à avoir utilisé cette technique. Lorsque les serveurs C2 principaux ne répondent pas , les systèmes infectés peuvent récupérer les domaines de secours (backup) à partir des portefeuilles Bitcoin codées en dur dans les binaires.</li>
+</ul>
+<p><img src="/img/img229.png" alt=""></p>
+<ul>
+<li>Glupteba agit également comme <strong>un rootkit</strong> en installant des pilotes de noyau vulnérables afin de se cacher 
+de différentes structures du noyau.</li>
+</ul>
+<p><img src="/img/img230.png" alt=""></p>
+<ul>
+<li>Les composants du dropper sont capables aussi du <strong>backdooring</strong> de la machine infectée</li>
+</ul>
+<p><img src="/img/img231.png" alt=""></p>
+<ul>
+<li>Glupteba peut se propager sur le réseau local en utilisant l&rsquo;exploit <strong>EternalBlue</strong></li>
+<li>Il utilise des nombreuses <strong>techniques auto-défensives</strong> comme la détection de l&rsquo;environnement exécution (VMs), modification des règles des firewalls, rajout des exclusions dans Windows Defender, etc</li>
+</ul>
+<h4 id="acteurs-et-services">Acteurs et services</h4>
+<p>En analysant les binaires de Glupteba, l&rsquo;equipe  a identifié certains contenant l&rsquo;URL d&rsquo;un repository git : <em>git.voltronwork.com</em>. Cette découverte a déclenché une enquête qui a permis d&rsquo;identifier, avec une grande degré de confiance, les personnes exploitant le botnet Glupteba : Voltronwork, ou <strong>Voltron</strong>, est une société de services IT <strong>basée en Russie</strong> qui utilise <em>git.voltronwork.com</em> et <em>gitlamp.com</em> pour développer différents composants de Glupteba.</p>
+<p><img src="/img/img232.png" alt=""></p>
+<p>Le suivi du fil des associations avec Voltron, à amené à la découverte de plusieurs services associés : AWMProxy, Trafspin et Dont.farm.</p>
+<p><strong>AWMProxy</strong> est un fournisseur de proxy résidentiel. Pour accéder au pool de proxy, le client doit configurer son appareil avec l&rsquo;IP et le port donnés qui pointent vers le serveur passerelle. Le tunnel Glupteba est installé sur la machine de la victime et enregistre le bot auprès du serveur via une requête DNS.</p>
+<p><img src="/img/img233.png" alt=""></p>
+<p><strong>Trafspin.com</strong> est un réseau publicitaire d&rsquo;enchères en temps réel qui vend des publicités in-app disruptives sur Android et du trafic web via les connexions proxy du botnet aux appareils mobiles infectés par le malware.</p>
+<p><img src="/img/img234.png" alt=""></p>
+<p>A noter la méthode intéressante pour forcer les publicités d&rsquo;une manière disruptive : le bouton &ldquo;fermer&rdquo; de la publicité est caché.</p>
+<p><strong>Dont[.]farm</strong> est un service publicitaire pour des comptes volées qui vend l&rsquo;accès sur Google et d&rsquo;autres plateformes en ligne. Le site opérateur charge les informations d&rsquo;identification et les cookies des comptes volés dans des machines virtuelles dont il vend l&rsquo;accès. Sur leur site web, les opérateurs affirment qu&rsquo;ils prennent en charge aussi les annonces blackhat pour Google Ads. Ils ont également déclaré qu&rsquo;ils fournissent un proxy pointant vers la même géolocalisation que celle de l&rsquo;utilisateur victime. Il est probable que le service utilise les machines infectées comme proxy de la même manière que AWMProxy, et que les comptes sont détournés par le module &ldquo;hijack de navigateur&rdquo; de Glupteba.</p>
+<p><img src="/img/img235.png" alt=""></p>
+<h4 id="ecosystème-criminel">Ecosystème criminel</h4>
+<p>Sur la base de ces recherches, l&rsquo;equippe TEG a exposé les acteurs derrière Glupteba qui développent ses différents composants. Il ont appris que les acteurs de Glupteba fournissent d&rsquo;autres services qui s&rsquo;appuient sur ses capacités initiales (celles d&rsquo;un rootkit). Ils ont  trouvé des preuves des interdépendances entre différents composants de Glupteba et leur services, tels que AWMProxy, Trafspin et dont[.]farm. Ces éléments ont amenés à 
+la conclusion que Glupteba est monétisé par ces services, ce qui a contribué finalement à perturber le botnet.</p>
+<p><img src="/img/img236.png" alt=""></p>
+<h4 id="conclusions">Conclusions</h4>
+<p>La présentation nous à permis d&rsquo;entrevoir les méthodes d&rsquo;analyse utilisés par Google TEG ainsi que d&rsquo;apprendre des détails très intéressantes concernant le mode opératoire du TA Glupteba. Après un hiatus de 6 mois leur activité à repris le mois de mai avec des changements notables dans la façon d&rsquo;opérer :</p>
+<ul>
+<li>nouvelle adresse BTC</li>
+<li>domaines C2 encodés dans les blockchains par XOR simple</li>
+<li>nouveaux domaines C2 en .onion</li>
+<li>utilisation de <strong>Discord</strong> pour télécharger Tor</li>
+<li>utilisation du client proxy Opera-VPN</li>
+</ul>
+<p>De nombreuses échantillons Glupteba ont encore été trouvés récemment ce qui laisse penser que le suivi de son activité reste d&rsquo;actualité.</p>
+<p>A suivre&hellip;</p>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+            
+              <span class="button next">
+                <a href="https://unic0rn-team.github.io/post/discord-telegram/">
+                  <span class="button__text">Les services Discord et Telegram en tant que vecteurs d&#39;attaque et amplification</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a
+  href="https://unic0rn-team.github.io/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >hello friend</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span
+          >© 2022 Powered by
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span
+        >
+        <span
+          >Theme created by
+          <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span
+        >
+      </div>
+    
+  </div>
+</footer>
+
+<script src="https://unic0rn-team.github.io/assets/main.js"></script>
+<script src="https://unic0rn-team.github.io/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>
