@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Notes de lecture Countdown to Zero Day - Kim Zetter ::
+        unic0rn-team&#39;s billets — unic0rn-team&#39;s musings
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="#Billet 9 TL;DR « Countdown to Zero Day » Est un livre écrit par la journaliste Kim Zetter qui détail la découverte et l’investigation autour du Malware Stuxnet. Célèbre depuis son utilisation lors de multiples attaques notamment contre des centrifugeuses en Iran, ce « verre » est soupçonné d’avoir été crée par les gouvernements israéliens et américains dans le but précis de saboter le programme nucléaire iranien.
+Le livre donne des détails techniques sur le fonctionnement du verre (&amp;quot;worm&amp;quot;) , et sur les efforts consentis afin d’identifier les responsables de sa création, et de son utilisation."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://unic0rn-team.github.io/post/noteslecture1/" />
+
+
+
+
+
+<link rel="stylesheet" href="https://unic0rn-team.github.io/assets/style.css" />
+
+<link rel="stylesheet" href="https://unic0rn-team.github.io/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="https://unic0rn-team.github.io/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="https://unic0rn-team.github.io/img/favicon.png" />
+
+
+<link href="https://unic0rn-team.github.io/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://unic0rn-team.github.io/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://unic0rn-team.github.io/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://unic0rn-team.github.io/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://unic0rn-team.github.io/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://unic0rn-team.github.io/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Notes de lecture Countdown to Zero Day - Kim Zetter"/>
+<meta name="twitter:description" content="#Billet 9 TL;DR « Countdown to Zero Day » Est un livre écrit par la journaliste Kim Zetter qui détail la découverte et l’investigation autour du Malware Stuxnet. Célèbre depuis son utilisation lors de multiples attaques notamment contre des centrifugeuses en Iran, ce « verre » est soupçonné d’avoir été crée par les gouvernements israéliens et américains dans le but précis de saboter le programme nucléaire iranien.
+Le livre donne des détails techniques sur le fonctionnement du verre (&quot;worm&quot;) , et sur les efforts consentis afin d’identifier les responsables de sa création, et de son utilisation."/>
+
+
+
+<meta property="og:title" content="Notes de lecture Countdown to Zero Day - Kim Zetter" />
+<meta property="og:description" content="#Billet 9 TL;DR « Countdown to Zero Day » Est un livre écrit par la journaliste Kim Zetter qui détail la découverte et l’investigation autour du Malware Stuxnet. Célèbre depuis son utilisation lors de multiples attaques notamment contre des centrifugeuses en Iran, ce « verre » est soupçonné d’avoir été crée par les gouvernements israéliens et américains dans le but précis de saboter le programme nucléaire iranien.
+Le livre donne des détails techniques sur le fonctionnement du verre (&quot;worm&quot;) , et sur les efforts consentis afin d’identifier les responsables de sa création, et de son utilisation." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unic0rn-team.github.io/post/noteslecture1/" />
+<meta property="article:published_time" content="2023-02-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-02-08T00:00:00+00:00" /><meta property="og:site_name" content="unic0rn-team&#39;s billets" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="https://unic0rn-team.github.io/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >hello friend</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/archive">Archive</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/archive">Archive</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Notes de lecture Countdown to Zero Day - Kim Zetter</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2023-02-08
+        </span>
+
+        
+          
+        
+      
+
+      
+        <span class="post-author"
+          >— Written by unic0rn-team</span
+        >
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <h2 id="billet-9">#Billet 9</h2>
+<h3 id="tldr">TL;DR</h3>
+<p>« Countdown to Zero Day » Est un livre écrit par la journaliste Kim Zetter qui détail la découverte et l’investigation autour du Malware Stuxnet. Célèbre depuis son utilisation lors de multiples attaques notamment contre des centrifugeuses en Iran, ce « verre » est soupçonné d’avoir été crée par les gouvernements israéliens et américains dans le but précis de saboter le programme nucléaire iranien.</p>
+<p>Le livre donne des détails techniques sur le fonctionnement du verre (&quot;<em>worm</em>&quot;) , et sur les efforts consentis afin d’identifier les responsables de sa création, et de son utilisation.</p>
+<p><img src="/img/img237.png" alt=""></p>
+<h3 id="contexte">CONTEXTE:</h3>
+<p>Dans une période de tensions entre l’Iran d’un côté, et les U.S.A et Israël de l’autre, le programme nucléaire iranien fait l’objet d’un grand nombre de débats. Certains affirment qu’il s’agit d’un programme entièrement dédié à l’usage civile, d’autre pensent qu’ils s’agit d’un moyen utilisé par le gouvernement Iranien pour acquérir la bombe atomique et l’utiliser comme il menace de le faire depuis longtemps contre Israël.</p>
+<p>Par le passé, Israël avait déjà montré sa capacité à frapper préventivement les programmes nucléaires des états voisins comme ce fut le cas en Irak sous Saddam, via des raids aériens. Pour autant l’Iran étant plus éloigné et potentiellement hors de portée d’une attaque conventionnelle, les options étaient plus limitées.</p>
+<p>Dans ce contexte, l’utilisation d’une cyberarme comme moyen de saboter voire détruire le programme nucléaire Iranien s’avère être une solution diplomatiquement moins risquée et surtout plus facile à mettre en pratique. Pourtant au moment où Stuxnet est utilisée à cette fin, les cyberarmes ne sont pas encore un outil répandu. D’ailleurs, dans son livre, Kim Zetter parle bien de Stuxnet comme étant la première Cyberarme utilisée.</p>
+<h3 id="les-acteurs-">LES ACTEURS :</h3>
+<p>Israël – L’état hébreu soucieux de s’assurer qu’aucun de ses voisins contre lesquels il a souvent été en guerre ne met la main sur l’arme atomique, met en œuvre une nouvelle arme pour tenter de saboter le programme nucléaire Iranien. Tout se base sur le fait qu’Israël suspecte que l’Iran cache derrière son programme nucléaire civile, une volonté d’obtenir de l’uranium enrichi à un niveau suffisant pour permettre d’en faire une bombe. Etant donné les menaces régulières agitée par l’état iranien à l’encontre d’Israel, et les tensions régionales, on peut juger que les inquiétudes Israéliennes sont compréhensibles.</p>
+<p>U.S.A – Les états Unis, allié d’Israël et surtout adversaire de l’Iran sont quant à eux soupçonné d’avoir participé à l’élaboration du Stuxnet. Les USA ciblent déjà depuis un moment l’Iran via un ensemble de sanctions économiques dont un embargo, et ont pour habitude de déstabiliser régulièrement la région avec des conséquences parfois mal maitrisées…</p>
+<p>Iran – Le gouvernement iranien menace régulièrement Israël. Dans ce contexte, son programme de nucléaire civile éveil des soupçons, faisant des centrales des cibles pour une attaque ou un acte de sabotage. De plus l’IAEA a rapporté à plusieurs reprises que l’Iran ne coopérait pas pleinement avec les processus de vérifications, et cherchait à développer des missiles qui permettraient de délivrer des ogives, éveillant davantage encore les soupçons.</p>
+<h3 id="stuxnet-">STUXNET :</h3>
+<p>Stuxnet est un verre complexe et très sophistiqué crée pour cibler les systèmes de contrôles industriels (ICS) tel que ceux utilisés dans les centrales nucléaires et d’autres infrastructures critiques.</p>
+<p>Déployé par clés USB, il va chercher sur les postes infectés des configurations software et hardware spécifiques utilisées dans les ICS. En cas de résultat positif, il tente de prendre le contrôle du système en exploitant un certain nombre de failles encore inconnues (zero-days).</p>
+<p>Une fois qu’il a la main sur le système, le verre utilise ses accès pour modifier la configuration de telle manière à affecter le bon fonctionnement de certains systèmes clés. Dans le cadre des centrales iraniennes, ce sont les centrifugeuses (utilisées pour enrichir l’uranium) et plus précisément la vitesse de rotation des pales qui ont été affectés, causant la mise hors service des réacteurs.</p>
+<p>Stuxnet a été pensé pour cacher sa présence, rendant difficile sa détection et suppression. Il utilise des techniques d’évasion, notamment en altérant ses communication réseau afin de les faire passer pour du trafic normal. Il utilise également un rootkit pour cacher ses fichiers et processus des logiciels de sécurité.</p>
+<p>Le malware est capable de se rependre en utilisant Siemens Step7 qui est un logiciel très utilisé dans les ICS. Précisément, c’est une vulnérabilité touchant les raccourcis de fichiers sur Windows qui a été exploitée.</p>
+<p>Du au fait que le logiciel a été conçu pour un type très précis de cible (Logiciels industriels sur OS windows), et à l’expertise derrière son fonctionnement. On peut aisément supposer que les moyens derrière sa création sont conséquents. Cela oriente donc l’enquête vers des acteurs étatiques. Il est ensuite rapide de conclure que les principaux adversaires de l’Iran sont probablement derrière les attaques. L’unité 8200 des services israéliens étant la cible principale des spéculations. Des documents publiés par Wikileaks tendent également à prouver l’implication des état unis dans la planification de l’attaque.</p>
+<h3 id="suites-">SUITES :</h3>
+<p>Il n’a pas vraiment été démontré de manière irréfutable que les USA et Israël étaient réellement responsables des attaques ou de la création du malware. Pourtant l’ensemble des éléments tendent grandement vers cette hypothèse. Le New York Times l’avait d’ailleurs annoncé dans l’un de ses articles sans laisser la place au doute.</p>
+<p>On estime que près d’un cinquième des centrifugeuses ont été touchées ce qui a ralenti le programme iranien. Un double attentat à la bombe visant des scientifiques iraniens le même jour montre une volonté de porter un vrai coup d’arrêt aux ambitions iraniennes de posséder un jour la bombe atomique. Pourtant dans les années qui ont suivi, les sanctions visant l’Iran ont été discutés et en grande partie levées lors des accords sur le nucléaire iranien, qui se seraient donc avérés plus efficace que Stuxnet pour arrêter le programme. A noter que récemment, les Américains sous Trump ont rompu les termes de ces accords en imposant de nouvelles sanctions.</p>
+<p>Au-delà des aspects géopolitiques, cette attaque marque un tournant dans la protection des sites sensibles pour tous les pays qui en sont dotés. Il est désormais possible de cibler des centrales nucléaires, des barrages, des usines de traitement des eaux&hellip; et tout cela sans avions, ni missiles.</p>
+<p>Par la suite, les cyberarmes seront utilisées dans pratiquement tous les conflits entre états afin de déstabiliser les gouvernements ou saboter les infrastructures critiques.</p>
+<p>Aujourd’hui l’un des risques qui peut se poser est lié à la capacité d’un tel malware à causer volontairement ou non un accident nucléaire au cours d’une attaque. Ce risque est d’ailleurs agité par la fédération de Russie après l’attaque. Afin de contrer ce risque, et plus largement toute tentative de sabotage, il devient important de reconsidérer la façon dont les infrastructure critiques sont protégées et isolées.</p>
+<h3 id="conclusion-">CONCLUSION :</h3>
+<p>Les Cyber arme ont depuis cette attaque fait leur entrée dans la gamme des outils à la disposition des états pour faire la guerre. Elles offrent un certain nombre d’avantages indéniables parmi lesquels la difficulté de tracer rapidement la source et donc de mener une contre-attaque efficace. Au-delà du potentiel destructeur, ces malwares peuvent également permettre le vol de donnée sensibles, ce qu’aucune bombe ne sait faire.</p>
+<p>Il ne s’agit cependant pas d’armes miraculeuses aux capacités illimitées.</p>
+<p>L’efficacité réel de Stuxnet sur le programme nucléaire iranien est sans doute à tempérer (Les Iraniens peuvent tout autant minimiser ou au contraire exagérer les dégâts subis pour tromper les observateurs), et la capacité destructive d’un malware n’égalera pas toujours celle d’un petit drone chargé d’explosifs comme le montrent les derniers évènements survenus en Iran en janvier 2023. Il est donc important de savoir comment et quand les utiliser.</p>
+<p>A noter enfin que Stuxnet a laisser derrière lui un ensemble de dérivés utiliser comme l’original pour cibler les Infrastructures sensibles. Ainsi d’autres attaques ont eu lieu principalement entre 2011 et 2018. On peu citer Flame en 2012 qui a ciblé l’Iran ou encore Industroyer en 2016 qui a ciblé l’Ukraine.</p>
+<h3 id="sources">SOURCES:</h3>
+<p><a href="https://www.amazon.fr/Countdown-Zero-Day-Stuxnet-Digital/dp/077043617X/ref=sr_1_1?crid=2HMD3R8XK6Q40&amp;keywords=countdown+to+zero+day&amp;qid=1675854996&amp;sprefix=countdown+to+zero%2Caps%2C79&amp;sr=8-1">Countdown To Zero Day – Kim Zettler</a></p>
+<p><a href="https://www.trellix.com/en-us/security-awareness/ransomware/what-is-stuxnet.html">https://www.trellix.com/en-us/security-awareness/ransomware/what-is-stuxnet.html</a></p>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+            
+              <span class="button next">
+                <a href="https://unic0rn-team.github.io/post/vb-part1/">
+                  <span class="button__text">Virus Bulletin Conference Prague 2022 - part 1</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a
+  href="https://unic0rn-team.github.io/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >hello friend</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span
+          >© 2023 Powered by
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span
+        >
+        <span
+          >Theme created by
+          <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span
+        >
+      </div>
+    
+  </div>
+</footer>
+
+<script src="https://unic0rn-team.github.io/assets/main.js"></script>
+<script src="https://unic0rn-team.github.io/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>
