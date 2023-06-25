@@ -9,10 +9,51 @@
     <description>Recent content in Posts on unic0rn-team&#39;s billets</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Feb 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 25 Jun 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://unic0rn-team.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>L&#39;opération Doppelganger</title>
+      <link>https://unic0rn-team.github.io/post/doppleganger/</link>
+      <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://unic0rn-team.github.io/post/doppleganger/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          #Billet 11 TL;DR Depuis le début de l’invasion de l’Ukraine par la Russie, toutes les sphères numériques se sont emparées d’une façon ou d’une autre ce sujet. De l’Institute for the Study of War (ISW) aux plateformes de partage de memes telles que 9gag ou reddit en passant par les réseaux sociaux, tout le monde à eux sont mots à dire. Un de ces sujets récurrents qui a touché tous ces médias, que ce soit pour s’en moquer ou s’en inquiéter, c’est la bien connue mais peu comprise « Armée de Trolls » déployée par la Russie dans le but de brouiller les pistes de ses actions et d’assoir son influence dans le monde.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Post-stuxnet - un changement majeur</title>
+      <link>https://unic0rn-team.github.io/post/pre-stuxnet/</link>
+      <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://unic0rn-team.github.io/post/pre-stuxnet/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          #Billet 10 TL;DR Compte rendu de la conférence de l’espace cyber &amp;quot; après Stuxnet&amp;rdquo; Conférence donnée par Kim zetter :
+Kim Zetter est une journaliste d’investigation et auteure américaine qui couvre la cybersécurité et la sécurité nationale depuis 1999. Elle a révélé de nombreuses histoires au fil des ans sur la surveillance de la NSA, WikiLeaks etc.., y compris une série primée sur les problèmes de sécurité des machines à voter électroniques au Etats-Unis.
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>Notes de lecture Countdown to Zero Day - Kim Zetter</title>
