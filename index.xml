@@ -15,6 +15,27 @@
     
     
     <item>
+      <title>Affaire SolarWinds</title>
+      <link>https://unic0rn-team.github.io/post/affairesolarwind/</link>
+      <pubDate>Sun, 14 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://unic0rn-team.github.io/post/affairesolarwind/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          #Billet 12 TL;DR Analyse CTI de l&amp;rsquo;Affaire SolarWinds : Profilage, Méthodes d&amp;rsquo;Intrusion et Impact
+Contexte : L&amp;rsquo;attaque SolarWinds, également connue sous le nom de Sunburst, s&amp;rsquo;est déroulée entre mars 2019 et décembre 2020. Les attaquants ont compromis le processus de développement logiciel de SolarWinds, une entreprise fournissant des outils de gestion informatique, et ont inséré un code malveillant dans les mises à jour du logiciel Orion. Cette technique sophistiquée de compromission de la chaîne d&amp;rsquo;approvisionnement logicielle a permis aux attaquants d&#39;établir un accès furtif et persistant aux réseaux des organisations clientes de SolarWinds.
+          
+        
+        </description>
+    </item>
+    
+    <item>
       <title>Colonial Pipeline</title>
       <link>https://unic0rn-team.github.io/post/colonialpipeline/</link>
       <pubDate>Tue, 09 Apr 2024 00:00:00 +0000</pubDate>
